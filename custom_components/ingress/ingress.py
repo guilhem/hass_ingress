@@ -245,6 +245,7 @@ document.querySelector("ha-panel-ingress").setProperties({{panel: {{
         # Start proxy
         async with self._websession.ws_connect(
             url,
+            ssl=cfg.ssl,
             headers=_init_header(request, cfg, user),
             protocols=req_protocols,
             autoclose=False,
@@ -275,6 +276,7 @@ document.querySelector("ha-panel-ingress").setProperties({{panel: {{
         async with self._websession.request(
             request.method,
             url,
+            ssl=cfg.ssl,
             headers=_init_header(request, cfg, user),
             params=request.query,
             allow_redirects=False,
